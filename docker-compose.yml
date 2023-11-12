@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  webap:
+    container_name: webap
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    privileged: true
+    tty: true
+    stdin_open: true
+    ports:
+      - 8080:80
+    volumes:
+      - ./first-app/dist/first-app/browser:/var/www/html
+      - ./conf/httpd.conf:/etc/httpd/conf/httpd.conf

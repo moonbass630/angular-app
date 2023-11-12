@@ -1,0 +1,28 @@
+◾️WebAP用コンテナの起動とアクセス方法
+・以下のコマンドを本ディレクトリ直下で実行する
+docker-compose up -d
+
+・以下のURLでアクセスできるように設定している
+http://localhost:8080
+
+◾️フォルダ構成
+・docker-compose.yml
+・Dockerfile
+・first-app
+ここにAngularベースのWebAP用srcがある
+・conf
+ここにApacheの設定ファイルがある（コンテナ上のhttpd.confをマウントしている）
+
+◾️WebAP用のAngularプロジェクトの開発する場合
+・nodeとnpmのインストール
+yum instal node
+・Angularのインストール
+npm install -g @angular/cli
+・npmモジュールをインストール
+npm install
+・（Angularのプロジェクト新規で開始したい場合）
+ng new <好きなアプリ名>
+・（ビルドしたい場合（dist配下にビルドファイルは作成される））
+ng build
+・（サービス開始したい時）
+ng serve --port 4201
